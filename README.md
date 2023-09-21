@@ -1,24 +1,40 @@
-# README
+# rails-api-base
+A quick starting point for building Rails APIs. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Comes preconfigured with `swagger`, `docker`, `rspec`, `postgres`, `sidekiq`, `rack-mini-profiler`, and `JWT`-based User Authentication. 
 
-Things you may want to cover:
+Requires some (very minimal) configuration beyond simply forking, which is covered below.
 
-* Ruby version
+## TODO DELETE LATER
+[x] - Postgres
 
-* System dependencies
+[ ] - JWT Auth
 
-* Configuration
+[ ] -  .env
 
-* Database creation
+[ ] - Postman Workspace Link?
 
-* Database initialization
+[ ] - Swagger
 
-* How to run the test suite
+[ ] - Sidekiq
 
-* Services (job queues, cache servers, search engines, etc.)
+[ ] - rack-mini-profiler
 
-* Deployment instructions
+[ ] - Docker
 
-* ...
+[ ] - Installation Guide
+
+[ ] - Usage Guide
+
+[ ] - Thank Yous
+
+## Using `rails-api-base`
+1. Dependencies
+1. Fork
+1. JWT
+1. CORS
+
+## Thank Yous
+* [Kailana Kahawaii](https://dev.to/kahawaiikailana/rails-api-quickstart-guide-with-postgressql-and-jwt-tokens-3pnk)
+* [The Auth0 Team (Okta)](https://jwt.io/)
+* [CircleCell](https://randomkeygen.com/)
