@@ -5,12 +5,20 @@ Comes preconfigured with `swagger`, `docker`, `rspec`, `postgres`, `sidekiq`, `r
 
 Requires some (very minimal) configuration beyond simply forking, which is covered below.
 
-## TODO DELETE LATER
+## TODO (DELETE LATER)
 [x] - Postgres
 
-[ ] - JWT Auth
+[x] - JSON API Serializer
 
-[ ] -  .env
+[x] - JWT Auth
+
+[x] - Service Objects
+
+[x] - Logging
+
+[x] -  .env
+
+[ ] - rspec
 
 [ ] - Postman Workspace Link?
 
@@ -22,19 +30,21 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [ ] - Docker
 
+[ ] - Github Test Actions
+
+[ ] - Main Branch Protections
+
 [ ] - Installation Guide
 
 [ ] - Usage Guide
 
 [ ] - Thank Yous
 
-## Using `rails-api-base`
-1. Dependencies
-1. Fork
-1. JWT
-1. CORS
+[ ] - README Pass Over
 
-## Thank Yous
-* [Kailana Kahawaii](https://dev.to/kahawaiikailana/rails-api-quickstart-guide-with-postgressql-and-jwt-tokens-3pnk)
-* [The Auth0 Team (Okta)](https://jwt.io/)
-* [CircleCell](https://randomkeygen.com/)
+## Using `rails-api-base`
+1. Fork
+1. Dependencies
+1. JWT key
+1. CORS routing
+1. local_env.yml
