@@ -18,9 +18,7 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [x] -  .env
 
-[ ] - rspec
-
-[ ] - Postman Workspace Link?
+[-] - rspec
 
 [ ] - Swagger
 
@@ -28,7 +26,11 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [ ] - rack-mini-profiler
 
+[ ] - standardRB linting
+
 [ ] - Docker
+
+[ ] - bin execution options
 
 [ ] - Github Test Actions
 
