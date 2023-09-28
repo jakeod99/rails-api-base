@@ -1,10 +1,10 @@
 module Api
   module V1
     class ApplicationController < ActionController::API
-      before_action :authorized
+      before_action :authorize
     
-      def authorized
-        render json: { message: 'Invalid Authorization' }, status: :unauthorized unless logged_in?
+      def authorize
+        render json: { error: 'Invalid Authorization' }, status: :unauthorized unless logged_in?
       end
     
       def logged_in?

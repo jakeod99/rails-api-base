@@ -18,7 +18,7 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [x] -  .env
 
-[-] - rspec
+[x] - rspec
 
 [ ] - Swagger
 
@@ -27,6 +27,8 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 [ ] - rack-mini-profiler
 
 [ ] - standardRB linting
+
+[ ] - Auto-ERD Gem?
 
 [ ] - Docker
 
@@ -40,9 +42,7 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [ ] - Usage Guide
 
-[ ] - Thank Yous
-
-[ ] - README Pass Over
+[ ] - Final Readme Check (delete this list then after reading through)
 
 ## Using `rails-api-base`
 1. Fork

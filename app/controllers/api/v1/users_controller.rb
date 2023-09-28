@@ -1,7 +1,7 @@
 module Api
   module V1
     class UsersController < Api::V1::ApplicationController
-      skip_before_action :authorized, only: [:create]
+      skip_before_action :authorize, only: [:create]
 
       def show
         begin
