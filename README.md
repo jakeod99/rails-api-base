@@ -18,7 +18,7 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [x] -  .env
 
-[x] - rspec
+[-] - rspec
 
 [ ] - Swagger
 

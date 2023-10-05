@@ -16,6 +16,6 @@ class ServiceResponse
   end
 
   def failure?
-    @status == :success
+    @status == :failure
   end
 end

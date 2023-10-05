@@ -17,7 +17,7 @@ class AuthTokenDecoder < ApplicationService
 
   def decode_token
     begin
-      JWT.decode(@token, secret_jwt_key, true, { algorithm: ENV['JWT_ALGORITHM'] })
+      JWT.decode(@token, secret_jwt_key, true, { algorithm: ENV['JWT_ALGORITHM'] || 'HS256' })
     rescue JWT::DecodeError
       [ { error: "Invalid Token" } ]
     end

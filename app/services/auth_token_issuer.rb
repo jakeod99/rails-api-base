@@ -18,14 +18,19 @@ class AuthTokenIssuer < ApplicationService
     Rails.application.credentials.secret_jwt_key
   end
 
+  def expiry
+    length = ENV['JWT_EXPIRY']&.to_i || 10800
+    Time.now.to_i + length
+  end
+
   def encoded_token
     JWT.encode(
       {
         user_id: @user_id,
-        exp: (Time.now + ENV['JWT_EXPIRY'].to_i).to_i
+        exp: expiry
       },
       secret_jwt_key,
-      ENV['JWT_ALGORITHM']
+      ENV['JWT_ALGORITHM'] || 'HS256'
     )
   end
 end
