@@ -20,11 +20,7 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [x] - rspec
 
-[ ] - Rails 7.1?
-
-[ ] - Gemfile gem versions
-
-[ ] - Swagger
+[x] - Postman
 
 [ ] - Sidekiq
 
