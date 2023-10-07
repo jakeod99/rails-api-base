@@ -1,25 +1,25 @@
 class AuthTokenIssuer < ApplicationService
+
+  DEFAULT_JWT_EXPIRY = 10800
+  DEFAULT_JWT_ALGORITHM = 'HS256'
+
   def initialize(user_id:)
     @user_id = user_id
   end
 
   def call
-    return failure unless user_exists?
+    return failure unless User.exists? @user_id
     success encoded_token
   end
 
   private
-
-  def user_exists?
-    User.exists? @user_id
-  end
 
   def secret_jwt_key
     Rails.application.credentials.secret_jwt_key
   end
 
   def expiry
-    length = ENV['JWT_EXPIRY']&.to_i || 10800
+    length = ENV['JWT_EXPIRY']&.to_i || DEFAULT_JWT_EXPIRY
     Time.now.to_i + length
   end
 
@@ -30,7 +30,7 @@ class AuthTokenIssuer < ApplicationService
         exp: expiry
       },
       secret_jwt_key,
-      ENV['JWT_ALGORITHM'] || 'HS256'
+      ENV['JWT_ALGORITHM'] || DEFAULT_JWT_ALGORITHM
     )
   end
 end

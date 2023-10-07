@@ -1,6 +1,6 @@
 module Api
   module V1
-    class SerializerBase
+    class ApplicationSerializer
       include JSONAPI::Serializer
 
       def data
