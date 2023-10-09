@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    container_name: db
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: "rails_api_base_development"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "rab_pg_P@$$W0RD"
+    ports:
+      - "5432:5432"
+    networks:
+      - rails-api-base-network
+
+  api:
+    image: api
+    container_name: api
+    build: .
+    environment:
+      - PG_HOST=db
+      - PG_USER=postgres
+      - PG_PASSWORD=rab_pg_P@$$W0RD
+    volumes:
+      - .:/rails-api-base
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - rails-api-base-network
+
+networks:
+  rails-api-base-network:
+    driver: bridge
+
+volumes:
+  postgres:

@@ -22,6 +22,8 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [x] - Postman
 
+[ ] - Docker
+
 [ ] - Sidekiq
 
 [ ] - rack-mini-profiler
@@ -29,8 +31,6 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 [ ] - standardRB linting
 
 [ ] - Auto-ERD Gem?
-
-[ ] - Docker
 
 [ ] - bin execution options
 

@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.0"
+ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"
@@ -40,6 +40,8 @@ gem 'jwt', '~> 2.7', '>= 2.7.1'
 gem 'jsonapi-serializer', '~> 2.2'
 
 gem 'colorize', '~> 1.1'
+
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1', groups: [:development, :test]
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
