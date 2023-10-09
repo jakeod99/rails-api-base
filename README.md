@@ -22,9 +22,9 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [x] - Postman
 
-[ ] - Docker
+[x] - Docker
 
-[ ] - Sidekiq
+[x] - Sidekiq
 
 [ ] - rack-mini-profiler
 
@@ -32,7 +32,7 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [ ] - Auto-ERD Gem?
 
-[ ] - bin execution options
+[-] - bin execution options
 
 [ ] - Github Test Actions
 

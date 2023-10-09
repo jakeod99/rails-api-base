@@ -2,4 +2,4 @@
 
 require_relative 'bin_ex'
 
-BinEx.new("docker-compose exec api rspec", ARGV).run
+BinEx.new("docker-compose run api rspec", ARGV).run
