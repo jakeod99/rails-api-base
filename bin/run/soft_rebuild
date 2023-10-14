@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require_relative 'bin_ex'
+
+rebuild_success = false
+
+DOWN = "docker-compose down"
+down_success = BinEx.new(DOWN).run
+
+if down_success
+  BUNDLE = "bundle install"
+  bundle_success = BinEx.new(BUNDLE).run
+
+  if bundle_success
+    BUILD = "docker-compose build"
+    rebuild_success = BinEx.new(BUILD).run
+  end
+end
+
+if rebuild_success
+  puts "[SUCCESS]".green + " soft_rebuild".cyan + " has successfully rebuilt".yellow
+  puts "\nRunning".yellow + " db:prepare".cyan + ", then spinning up fresh containers".yellow
+  PREPARE_DB = "docker-compose run api bundle exec rails db:prepare"
+  BinEx.new(PREPARE_DB).run
+  UP = "docker-compose up"
+  BinEx.new(UP).run
+else
+  puts "[FAILED]".red + " soft_rebuild".cyan + " failed during previous step".yellow
+end

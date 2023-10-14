@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+# alias for bin/run/console
+
+system "bin/run/console"

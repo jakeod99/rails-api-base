@@ -83,6 +83,7 @@ GEM
       xpath (~> 3.2)
     colorize (1.1.0)
     concurrent-ruby (1.2.2)
+    connection_pool (2.4.1)
     crass (1.0.6)
     database_cleaner (2.0.2)
       database_cleaner-active_record (>= 2, < 3)
@@ -95,7 +96,13 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
+    et-orbi (1.2.7)
+      tzinfo
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
@@ -103,6 +110,9 @@ GEM
       railties (>= 5.0.0)
     faker (3.2.1)
       i18n (>= 1.8.11, < 2)
+    fugit (1.8.1)
+      et-orbi (~> 1, >= 1.2.7)
+      raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -143,12 +153,15 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.4-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.15.4-x86_64-linux)
+      racc (~> 1.4)
     pg (1.5.4)
     psych (5.1.0)
       stringio
     public_suffix (5.0.3)
     puma (5.6.7)
       nio4r (~> 2.0)
+    raabro (1.4.0)
     racc (1.7.1)
     rack (2.2.8)
     rack-cors (2.0.1)
@@ -186,6 +199,9 @@ GEM
     rake (13.0.6)
     rdoc (6.5.0)
       psych (>= 4.0.0)
+    redis (4.8.1)
+    redis-client (0.17.0)
+      connection_pool
     regexp_parser (2.8.1)
     reline (0.3.9)
       io-console (~> 0.5)
@@ -208,6 +224,15 @@ GEM
     rspec-support (3.12.1)
     shoulda-matchers (5.3.0)
       activesupport (>= 5.2.0)
+    sidekiq (7.1.5)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      rack (>= 2.2.4)
+      redis-client (>= 0.14.0)
+    sidekiq-cron (1.10.1)
+      fugit (~> 1.8)
+      globalid (>= 1.0.1)
+      sidekiq (>= 6)
     stringio (3.0.8)
     thor (1.2.2)
     timeout (0.4.0)
@@ -222,6 +247,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
@@ -230,6 +256,7 @@ DEPENDENCIES
   colorize (~> 1.1)
   database_cleaner (~> 2.0, >= 2.0.2)
   debug (~> 1.8)
+  dotenv-rails (~> 2.1, >= 2.1.1)
   factory_bot_rails (~> 6.2)
   faker (~> 3.2, >= 3.2.1)
   jbuilder (~> 2.11, >= 2.11.5)
@@ -239,12 +266,15 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-cors (~> 2.0, >= 2.0.1)
   rails (~> 7.0.8)
+  redis (~> 4.0)
   rspec-rails (~> 6.0, >= 6.0.3)
   shoulda-matchers (~> 5.3)
+  sidekiq (~> 7.1, >= 7.1.5)
+  sidekiq-cron (~> 1.10, >= 1.10.1)
   tzinfo-data (~> 1.2023, >= 1.2023.3)
 
 RUBY VERSION
-   ruby 3.1.0p0
+   ruby 3.2.2p53
 
 BUNDLED WITH
-   2.3.3
+   2.4.10
