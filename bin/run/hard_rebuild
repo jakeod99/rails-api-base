@@ -12,18 +12,23 @@ if down_success
   rm_success = BinEx.new(RM).run
 
   if rm_success
-    BUILD = "docker-compose build --no-cache"
-    rebuild_success = BinEx.new(BUILD).run
+    BUNDLE = "bundle install"
+    bundle_success = BinEx.new(BUNDLE).run
+
+    if bundle_success
+      BUILD = "docker-compose build --no-cache"
+      rebuild_success = BinEx.new(BUILD).run
+    end
   end
 end
 
 if rebuild_success
   puts "[SUCCESS]".green + " hard_rebuild".cyan + " has successfully rebuilt".yellow
-  puts "\nAttempting to run db:prepare, then spin up containers for the fresh images".yellow
-  PREPARE_DB = "docker-compose run api bundle exec rails db:prepare"
-  BinEx.new(PREPARE_DB).run
+  puts "\nRunning".yellow + " db:reset".cyan + ", then spinning up fresh containers".yellow
+  RESET_DB = "docker-compose run api bundle exec rails db:reset"
+  BinEx.new(RESET_DB).run
   UP = "docker-compose up"
   BinEx.new(UP).run
 else
-  puts "[FAILED]".red + " hard_rebuild".cyan + " failed during last step".yellow
+  puts "[FAILED]".red + " hard_rebuild".cyan + " failed during previous step".yellow
 end

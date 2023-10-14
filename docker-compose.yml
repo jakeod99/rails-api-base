@@ -2,39 +2,55 @@ version: '3.8'
 
 services:
   db:
-    image: postgres
+    image: postgres:16.0
     container_name: db
     volumes:
       - postgres:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: "rails_api_base_development"
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "rab_pg_P@$$W0RD"
+      POSTGRES_DB: rails_api_base_development
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: rab_pg_P@$$W0RD
     ports:
-      - "5432:5432"
-    networks:
-      - rails-api-base-network
+      - '5432:5432'
+
+  redis:
+    image: 'redis:7.2-alpine'
+    container_name: redis
+    volumes:
+      - 'redis:/data'
+    command: redis-server
+    ports:
+      - '6379:6379'
 
   api:
     image: api
     container_name: api
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - .:/rails-api-base
     build: .
     environment:
       - PG_HOST=db
       - PG_USER=postgres
       - PG_PASSWORD=rab_pg_P@$$W0RD
-    volumes:
-      - .:/rails-api-base
     ports:
-      - "3000:3000"
+      - '3000:3000'
+
+  sidekiq:
+    container_name: sidekiq
     depends_on:
       - db
-    networks:
-      - rails-api-base-network
-
-networks:
-  rails-api-base-network:
-    driver: bridge
+      - redis
+    volumes:
+      - .:/rails-api-base
+    build: .
+    environment:
+      - REDIS_URL_SIDEKIQ=redis://redis:6379/1
+    command: bundle exec sidekiq
+    
 
 volumes:
+  redis:
   postgres:

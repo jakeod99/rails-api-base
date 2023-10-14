@@ -1,0 +1,2 @@
+# Config file for scheduling Sidekiq Cron Jobs
+# https://github.com/sidekiq-cron/sidekiq-cron#adding-cron-job (find config/schedule.yml section)

@@ -2,6 +2,8 @@ require_relative "boot"
 
 require "rails/all"
 
+require "sidekiq"
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -32,5 +34,7 @@ module RailsApiBase
     end
 
     config.logger = ActiveSupport::Logger.new("log/#{Rails.env}.log")
+
+    config.autoload_paths += %W(#{config.root}/app/sidekiq)
   end
 end

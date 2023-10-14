@@ -26,6 +26,8 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [x] - Sidekiq
 
+[x] - Sidekiq Cron
+
 [ ] - rack-mini-profiler
 
 [ ] - standardRB linting
