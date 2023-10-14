@@ -1,4 +1,4 @@
-require 'colorize'
+require "colorize"
 
 class BinEx
   attr_accessor :base_command, :args

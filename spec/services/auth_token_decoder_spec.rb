@@ -1,19 +1,18 @@
 RSpec.describe AuthTokenDecoder do
-
   include ActiveSupport::Testing::TimeHelpers
 
   let(:user) { FactoryBot.create(:user) }
   let(:token) { AuthTokenIssuer.call(user_id: user.id).content }
-  let(:env_jwt_algorithm) { 'HS512' }
+  let(:env_jwt_algorithm) { "HS512" }
   let(:default_jwt_algorithm) { AuthTokenIssuer::DEFAULT_JWT_ALGORITHM }
   let(:jwt_expiry) { AuthTokenIssuer::DEFAULT_JWT_EXPIRY }
-  
+
   before :example do |test|
     unless test.metadata[:skip_env_stubs]
       stub_const(
-        'ENV', 
+        "ENV",
         ENV.to_hash.merge(
-          'JWT_ALGORITHM' => env_jwt_algorithm.to_s
+          "JWT_ALGORITHM" => env_jwt_algorithm.to_s
         )
       )
     end
@@ -21,8 +20,8 @@ RSpec.describe AuthTokenDecoder do
 
   subject { AuthTokenDecoder.call(token: token) }
 
-  describe '#call' do
-    it 'responds with the decoded token' do
+  describe "#call" do
+    it "responds with the decoded token" do
       travel_to Time.now do
         response = subject
         expect(response.success?).to be true
@@ -32,8 +31,8 @@ RSpec.describe AuthTokenDecoder do
       end
     end
 
-    context 'when the token has expired' do
-      it 'repsonds with an Invalid Token error' do
+    context "when the token has expired" do
+      it "repsonds with an Invalid Token error" do
         token
         travel_to 2.days.from_now do
           response = subject
@@ -43,8 +42,8 @@ RSpec.describe AuthTokenDecoder do
       end
     end
 
-    context 'when no JWT algorithm is specified in ENV' do
-      it 'responds with the decoded token using the default algorithm', skip_env_stubs: true do
+    context "when no JWT algorithm is specified in ENV" do
+      it "responds with the decoded token using the default algorithm", skip_env_stubs: true do
         travel_to Time.now do
           response = subject
           expect(response.success?).to be true

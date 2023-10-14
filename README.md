@@ -28,11 +28,13 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [x] - Sidekiq Cron
 
-[ ] - rack-mini-profiler
-
-[ ] - standardRB linting
+[x] - standardRB linting
 
 [ ] - Auto-ERD Gem?
+
+[ ] - rack-mini-profiler
+
+[ ] - User ID default to UUID
 
 [-] - bin execution options
 
@@ -47,8 +49,3 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 [ ] - Final Readme Check (delete this list then after reading through)
 
 ## Using `rails-api-base`
-1. Fork
-1. Dependencies
-1. JWT key
-1. CORS routing
-1. local_env.yml

@@ -28,13 +28,13 @@ module RailsApiBase
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*' # TODO - UPDATE THIS TO RESTRICT REQUEST ORIGINS
-        resource '*', headers: :any, methods: [:get, :post]
+        origins "*" # TODO - UPDATE THIS TO RESTRICT REQUEST ORIGINS
+        resource "*", headers: :any, methods: [:get, :post]
       end
     end
 
     config.logger = ActiveSupport::Logger.new("log/#{Rails.env}.log")
 
-    config.autoload_paths += %W(#{config.root}/app/sidekiq)
+    config.autoload_paths += %W[#{config.root}/app/sidekiq]
   end
 end

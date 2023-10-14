@@ -2,6 +2,6 @@
 
 require_relative "bin_ex"
 
-BASE_COMMAND = "docker-compose up"
+BASE_COMMAND = "docker-compose run api bundle exec rake standard:fix"
 
 BinEx.new(BASE_COMMAND, ARGV).run
