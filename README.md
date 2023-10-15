@@ -30,17 +30,21 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [x] - standardRB linting
 
-[ ] - Auto-ERD Gem?
+[x] - bin execution options
 
-[ ] - rack-mini-profiler
+[x] - Encourage Use of https://dbdiagram.io/d for ERDs when Schema updates (import schema.rb)
 
-[ ] - User ID default to UUID
+[x] - rack-mini-profiler (localhost:3000?pp=help)
 
-[-] - bin execution options
+[x] - User ID default to UUID
 
 [ ] - Github Test Actions
 
+[ ] - Github Merge Expectations Checklist (rspec, erd, lint, postman)
+
 [ ] - Main Branch Protections
+
+[ ] - Github Readme Status Buttons
 
 [ ] - Installation Guide
 

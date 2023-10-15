@@ -24,8 +24,9 @@ end
 
 if rebuild_success
   puts "[SUCCESS]".green + " hard_rebuild".cyan + " has successfully rebuilt".yellow
-  puts "\nRunning".yellow + " db:reset".cyan + ", then spinning up fresh containers".yellow
-  RESET_DB = "docker-compose run api bundle exec rails db:reset"
+  print "\nRunning".yellow + " db:drop db:create db:migrate".cyan
+  puts ", then spinning up fresh containers".yellow
+  RESET_DB = "docker-compose run api bundle exec rails db:drop db:create db:migrate"
   BinEx.new(RESET_DB).run
   UP = "docker-compose up"
   BinEx.new(UP).run
