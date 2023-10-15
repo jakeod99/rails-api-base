@@ -28,17 +28,23 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 [x] - Sidekiq Cron
 
-[ ] - rack-mini-profiler
+[x] - standardRB linting
 
-[ ] - standardRB linting
+[x] - bin execution options
 
-[ ] - Auto-ERD Gem?
+[x] - Encourage Use of https://dbdiagram.io/d for ERDs when Schema updates (import schema.rb)
 
-[-] - bin execution options
+[x] - rack-mini-profiler (localhost:3000?pp=help)
+
+[x] - User ID default to UUID
 
 [ ] - Github Test Actions
 
+[ ] - Github Merge Expectations Checklist (rspec, erd, lint, postman)
+
 [ ] - Main Branch Protections
+
+[ ] - Github Readme Status Buttons
 
 [ ] - Installation Guide
 
@@ -47,8 +53,3 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 [ ] - Final Readme Check (delete this list then after reading through)
 
 ## Using `rails-api-base`
-1. Fork
-1. Dependencies
-1. JWT key
-1. CORS routing
-1. local_env.yml

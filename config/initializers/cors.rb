@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*' # TODO - UPDATE THIS TO RESTRICT REQUEST ORIGINS
+    origins "*" # TODO - UPDATE THIS TO RESTRICT REQUEST ORIGINS
 
     resource "*",
       headers: :any,

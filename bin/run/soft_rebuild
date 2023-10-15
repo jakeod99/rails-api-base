@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative 'bin_ex'
+require_relative "bin_ex"
 
 rebuild_success = false
 
