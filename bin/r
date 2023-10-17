@@ -3,7 +3,7 @@
 require_relative 'run/bin_ex'
 
 if ARGV.length < 1
-  puts "[FAILED]".red + " requires arguments (e.g.,".yellow + " bin/d rspec".cyan + ")".yellow
+  puts "[FAILED]".red + " requires arguments (e.g.,".yellow + " bin/r rspec".cyan + ")".yellow
 else
   BinEx.new("bin/run/#{ARGV.first}", ARGV[1..-1]).run
 end

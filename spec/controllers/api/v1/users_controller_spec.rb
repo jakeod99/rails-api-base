@@ -24,7 +24,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       expect(@body["user"]["attributes"]["username"]).to eq("test-user")
       expect(@body["user"]["type"]).to eq("user")
 
-      expect(@body["user"]["id"].to_i).to eq(decode_response.content.first["user_id"])
+      expect(@body["user"]["id"]).to eq(decode_response.content.first["user_id"])
 
       expect(User.exists?(username: param_username)).to be true
     end
@@ -99,7 +99,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     end
 
     context "when requested user does not exist" do
-      let(:user_id) { (User.last&.id || 0) + 1 }
+      let(:user_id) { SecureRandom.uuid } # repeat is EXTREMELY unlikely
 
       it "responds with Failed to Find User error message" do
         expect(response).to have_http_status(404)

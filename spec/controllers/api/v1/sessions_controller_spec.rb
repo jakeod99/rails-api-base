@@ -23,7 +23,7 @@ RSpec.describe Api::V1::SessionsController, type: :controller do
       expect(@body["user"].keys.sort).to eq(["attributes", "id", "type"])
       expect(@body["user"]["attributes"].keys).to eq(["username"])
       expect(@body["user"]["attributes"]["username"]).to eq("test-user")
-      expect(@body["user"]["id"].to_i).to eq(user.id)
+      expect(@body["user"]["id"]).to eq(user.id)
       expect(@body["user"]["type"]).to eq("user")
     end
 

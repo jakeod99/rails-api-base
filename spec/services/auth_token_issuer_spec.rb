@@ -38,7 +38,7 @@ RSpec.describe AuthTokenIssuer do
     end
 
     context "when provided user does not exist" do
-      let(:user_id) { (User.last&.id || 0) + 1 }
+      let(:user_id) { SecureRandom.uuid } # repeat is EXTREMELY unlikely
 
       it "responds with a failed ServiceResponse" do
         response = subject
