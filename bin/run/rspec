@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative "bin_ex"
+
+BinEx.new("docker-compose run api rspec", ARGV).run

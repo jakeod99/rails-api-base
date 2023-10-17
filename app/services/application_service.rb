@@ -1,7 +1,7 @@
-class ApplicationService 
-  def self.call(**args)
-    Rails.logger.info "#{self.name}: Started".cyan
-    new(**args).call
+class ApplicationService
+  def self.call(**)
+    Rails.logger.info "#{name}: Started".cyan
+    new(**).call
   end
 
   private

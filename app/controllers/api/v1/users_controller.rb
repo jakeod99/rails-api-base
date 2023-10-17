@@ -5,9 +5,9 @@ module Api
 
       def show
         @user = User.find(params[:id])
-        render json: { user: Api::V1::UserSerializer.new(@user).data }
+        render json: {user: Api::V1::UserSerializer.new(@user).data}
       rescue
-        render json: { error: "Failed to Find User" }, status: 404
+        render json: {error: "Failed to Find User"}, status: 404
       end
 
       def create
@@ -16,10 +16,10 @@ module Api
           token_result = AuthTokenIssuer.call(user_id: @user.id)
           raise StandardError if token_result.failure?
           token = token_result.content
-          render json: { user: Api::V1::UserSerializer.new(@user).data, jwt: token }, status: 201
+          render json: {user: Api::V1::UserSerializer.new(@user).data, jwt: token}, status: 201
         end
       rescue
-        render json: { error: 'Failed to Create Valid User' }, status: 400
+        render json: {error: "Failed to Create Valid User"}, status: 400
       end
 
       private

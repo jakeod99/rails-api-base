@@ -8,7 +8,7 @@ RSpec.describe ServiceResponse do
     expect { subject }.to raise_error(ArgumentError)
   end
 
-  describe '#success?' do
+  describe "#success?" do
     context "with a successful ServiceResponse" do
       let(:status) { :success }
       it("responds true") { expect(subject.success?).to be true }
@@ -19,8 +19,8 @@ RSpec.describe ServiceResponse do
       it("responds false") { expect(subject.success?).to be false }
     end
   end
-  
-  describe '#failure?' do
+
+  describe "#failure?" do
     context "with a successful ServiceResponse" do
       let(:status) { :success }
       it("responds false") { expect(subject.failure?).to be false }

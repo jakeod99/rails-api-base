@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require_relative "bin_ex"
+
+def command(run = false)
+  "docker-compose #{run ? "run" : "exec"} api rails c"
+end
+
+exec_succeess = BinEx.new(command).run
+
+unless exec_succeess
+  puts "[FAILED]".red + " Could not locate active container, spinning up new api instance".yellow
+  run_success = BinEx.new(command(true)).run
+  unless run_success
+    puts "[FAILED]".red + " exec".cyan + " and".yellow + " run".cyan + " both failed".yellow
+  end
+end

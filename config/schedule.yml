@@ -1,0 +1,8 @@
+# Config file for scheduling Sidekiq Cron Jobs
+# https://github.com/sidekiq-cron/sidekiq-cron#adding-cron-job (find config/schedule.yml section)
+# Must have content, otherwise sidekiq container won't spin up
+
+placeholder_job:
+  cron: "0 30 9 15 4 ? 1999"
+  class: "PlaceholderJob"
+  queue: placeholder_job
