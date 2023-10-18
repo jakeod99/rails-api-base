@@ -4,6 +4,10 @@ class ApplicationService
     new(**).call
   end
 
+  def call
+    raise NotImplementedError
+  end
+
   private
 
   LOG_LEVELS = [:debug, :info, :warn, :error, :fatal, :unknown]

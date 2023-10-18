@@ -1,59 +1,74 @@
-# rails-api-base
-A quick starting point for building Rails APIs. 
+![Main Tests & Lint](https://github.com/jakeod99/rails-api-base/actions/workflows/pull_request_protections.yml/badge.svg)
+![Dev Tests & Lint](https://github.com/jakeod99/rails-api-base/actions/workflows/pull_request_protections.yml/badge.svg?branch=dev)
 
-Comes preconfigured with `swagger`, `docker`, `rspec`, `postgres`, `sidekiq`, `rack-mini-profiler`, and `JWT`-based User Authentication. 
+# Rails API Base
+
+A starting point for building Rails APIs. 
+
+When you quick start with `rails-api-base`, your API comes preconfigured for working with:
+
+- `Docker`
+- `Environment Variables`
+- `bin/r CLI Scripts`
+- `Postgres`
+- `Sidekiq (plus Sidekiq Cron)`
+- `JWT Authentication`
+- `Policy Objects`
+- `Service Objects`
+- `Query Objects`
+- `JSON::API Serializers`
+- `Logging`
+- `StandardRB Linting`
+- `rspec`
+- `ERDs`
+- `rack-mini-profiler`
+- `Github Test & Lint Actions`
+- `Github PR Templates`
 
 Requires some (very minimal) configuration beyond simply forking, which is covered below.
 
-## TODO (DELETE LATER)
-- [x] Postgres
+## Quick Start
 
-- [x] JSON API Serializer
+1. [Fork this Repository](https://github.com/jakeod99/rails-api-base/fork)
 
-- [x] JWT Auth
+1. 
 
-- [x] Service Objects
 
-- [x] Logging
+## Installation (TODO)
+- [x]  Postgres
 
-- [x]  .env
+- [x]  JSON API Serializer
 
-- [x] rspec
+- [x]  JWT Auth
 
-- [x] Postman
+- [x]  Service Objects
 
-- [x] Docker
+- [x]  Logging
 
-- [x] Sidekiq
+- [x]   .env
 
-- [x] Sidekiq Cron
+- [x]  rspec
 
-- [x] standardRB linting
+- [x]  Postman
 
-- [x] bin execution options
+- [x]  Docker
 
-- [x] Encourage Use of https://dbdiagram.io/d for ERDs when Schema updates (import schema.rb)
+- [x]  Sidekiq
 
-- [x] rack-mini-profiler (localhost:3000?pp=help)
+- [x]  Sidekiq Cron
 
-- [x] User ID default to UUID
+- [x]  standardRB linting
 
-- [x] Github Test Actions
+- [x]  bin execution options
 
-- [x] Github Merge Expectations Checklist (rspec, erd, lint, postman)
+- [x]  Encourage Use of https://dbdiagram.io/d for ERDs when Schema updates (import schema.rb)
 
-- [x] Main Branch Protections
+- [x]  rack-mini-profiler (localhost:3000?pp=help)
 
-- [ ] Policies
+- [x]  Github Test Actions
 
-- [ ] Query Objects
+- [x]  Github Merge Expectations Checklist (rspec, erd, lint, postman)
 
-- [ ] Github Readme Status Buttons
+- [x]  Policies (https://dev.to/kputra/rails-policy-objects-implementation-50ni)
 
-- [ ] Installation Guide
-
-- [ ] Usage Guide
-
-- [ ] Final Readme Check (delete this list then after reading through)
-
-## Using `rails-api-base`
+- [x]  Query Objects (https://medium.com/selleo/essential-rubyonrails-patterns-part-2-query-objects-4b253f4f4539)
