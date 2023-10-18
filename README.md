@@ -6,50 +6,54 @@ Comes preconfigured with `swagger`, `docker`, `rspec`, `postgres`, `sidekiq`, `r
 Requires some (very minimal) configuration beyond simply forking, which is covered below.
 
 ## TODO (DELETE LATER)
-[x] - Postgres
+- [x] Postgres
 
-[x] - JSON API Serializer
+- [x] JSON API Serializer
 
-[x] - JWT Auth
+- [x] JWT Auth
 
-[x] - Service Objects
+- [x] Service Objects
 
-[x] - Logging
+- [x] Logging
 
-[x] -  .env
+- [x]  .env
 
-[x] - rspec
+- [x] rspec
 
-[x] - Postman
+- [x] Postman
 
-[x] - Docker
+- [x] Docker
 
-[x] - Sidekiq
+- [x] Sidekiq
 
-[x] - Sidekiq Cron
+- [x] Sidekiq Cron
 
-[x] - standardRB linting
+- [x] standardRB linting
 
-[x] - bin execution options
+- [x] bin execution options
 
-[x] - Encourage Use of https://dbdiagram.io/d for ERDs when Schema updates (import schema.rb)
+- [x] Encourage Use of https://dbdiagram.io/d for ERDs when Schema updates (import schema.rb)
 
-[x] - rack-mini-profiler (localhost:3000?pp=help)
+- [x] rack-mini-profiler (localhost:3000?pp=help)
 
-[x] - User ID default to UUID
+- [x] User ID default to UUID
 
-[ ] - Github Test Actions
+- [x] Github Test Actions
 
-[ ] - Github Merge Expectations Checklist (rspec, erd, lint, postman)
+- [x] Github Merge Expectations Checklist (rspec, erd, lint, postman)
 
-[ ] - Main Branch Protections
+- [x] Main Branch Protections
 
-[ ] - Github Readme Status Buttons
+- [ ] Policies
 
-[ ] - Installation Guide
+- [ ] Query Objects
 
-[ ] - Usage Guide
+- [ ] Github Readme Status Buttons
 
-[ ] - Final Readme Check (delete this list then after reading through)
+- [ ] Installation Guide
+
+- [ ] Usage Guide
+
+- [ ] Final Readme Check (delete this list then after reading through)
 
 ## Using `rails-api-base`
