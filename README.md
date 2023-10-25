@@ -36,6 +36,7 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 1. Search for all instances of `rails-api-base` and `rails_api_base` in this codebase, and replace them with your project's name (following the same format).
 
     * Specifically, update the following:
+    
     ![project name replacement](docs-project-name-replacement.png "Project Name Replacement")
 
 1. Be sure you have the following installed locally:
@@ -47,7 +48,9 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
     * Delete `credentials.yml.enc`
     * Navigate to [Random Keygen](https://randomkeygen.com/), and copy one of the randomly generated `CodeIgniter Encryption Keys`
+
     ![random keygen](docs-random-keygen.png "Random Keygen")
+
     * Add it to your Rails credentials by running the following
         * `EDITOR="code --wait" rails credentials:edit`
         * In the the `.yml` that pops up, add the hash `secret_jwt_key: your-copied-encryption-key`
@@ -55,7 +58,9 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 1. With the exception of `/bin/run/bin_ex.rb`, check to be sure all the files in `/bin` (including in `bin/run`) are executable.
 
     * Run `ls -al bin bin/run`
+
     ![bin ls](docs-bin-ls.png "bin ls")
+
     * For any executables that do not have the necessary execute permissions, update to the level of permission you see fit (e.g., `chmod 755 bin/run/lint`)
 
 1. Copy `.env.template` into a new local `.env`
