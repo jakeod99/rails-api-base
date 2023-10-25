@@ -29,9 +29,40 @@ Requires some (very minimal) configuration beyond simply forking, which is cover
 
 ## Quick Start
 
-1. [Fork this Repository](https://github.com/jakeod99/rails-api-base/fork)
+1. [Import from this Repository](https://github.com/new/import)
 
-1. 
+    * You could also [fork](https://github.com/jakeod99/rails-api-base/fork) if you'd rather keep your project tied to any updates this one may receive.
+
+1. Search for all instances of `rails-api-base` and `rails_api_base` in this codebase, and replace them with your project's name (following the same format).
+
+    * Specifically, update the following:
+    ![project name replacement](docs-project-name-replacement.png "Project Name Replacement")
+
+1. Be sure you have the following installed locally:
+
+    * [Docker Desktop](https://www.docker.com/products/docker-desktop/) (plus `docker` CLI commands)
+    * [Rails](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-macos) (in order to use `bundler` locally and copy the resulting `Gemfile` to docker)
+
+1. Establish your local `secret_jwt_key`
+
+    * Delete `credentials.yml.enc`
+    * Navigate to [Random Keygen](https://randomkeygen.com/), and copy one of the randomly generated `CodeIgniter Encryption Keys`
+    ![random keygen](docs-random-keygen.png "Random Keygen")
+    * Add it to your Rails credentials by running the following
+        * `EDITOR="code --wait" rails credentials:edit`
+        * In the the `.yml` that pops up, add the hash `secret_jwt_key: your-copied-encryption-key`
+
+1. With the exception of `/bin/run/bin_ex.rb`, check to be sure all the files in `/bin` (including in `bin/run`) are executable.
+
+    * Run `ls -al bin bin/run`
+    ![bin ls](docs-bin-ls.png "bin ls")
+    * For any executables that do not have the necessary execute permissions, update to the level of permission you see fit (e.g., `chmod 755 bin/run/lint`)
+
+1. Copy `.env.template` into a new local `.env`
+
+1. Run `bin/r hard_rebuild`
+
+    * Once all containers have spun up (`db`, `redis`, `api`, and `sidekiq`), your api should be discoverable at [port 3000](http://localhost:3000/)!
 
 
 ## Installation (TODO)
